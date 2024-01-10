@@ -14,11 +14,12 @@ public class AuthService : IAuthService
 {
     UserManager<AppUser> _userManager { get; }
     ITokenService _tokenService { get; }
-
-    public AuthService(UserManager<AppUser> userManager, ITokenService tokenService)
+    RoleManager<IdentityRole> _roleManager { get; }
+    public AuthService(UserManager<AppUser> userManager, ITokenService tokenService, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _tokenService = tokenService;
+        _roleManager = roleManager;
     }
 
     public async Task<TokenDto> Login(LoginDto dto)

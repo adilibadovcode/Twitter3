@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.API", "Twitter.API\Twitter.API.csproj", "{8A5FF484-01B3-40F7-8FE6-55242C321D6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.API", "Twitter.API\Twitter.API.csproj", "{8A5FF484-01B3-40F7-8FE6-55242C321D6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Core", "Twitter.Core\Twitter.Core.csproj", "{9BF7B991-16C4-4198-9A92-90FFFFFBB518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Core", "Twitter.Core\Twitter.Core.csproj", "{9BF7B991-16C4-4198-9A92-90FFFFFBB518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.DAL", "Twitter.DAL\Twitter.DAL.csproj", "{910EC3D1-7080-4B39-8578-2CA50D8A1020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.DAL", "Twitter.DAL\Twitter.DAL.csproj", "{910EC3D1-7080-4B39-8578-2CA50D8A1020}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Business", "Twitter.Business\Twitter.Business.csproj", "{DA10603F-0091-401F-A331-2624A59AEE49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitter.Business", "Twitter.Business\Twitter.Business.csproj", "{DA10603F-0091-401F-A331-2624A59AEE49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

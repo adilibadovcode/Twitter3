@@ -1,12 +1,18 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Writers;
 using System.Text;
+using Twitter.API.Helpers;
 using Twitter.Business;
 using Twitter.Core.Entities;
+using Twitter.Core.Enums;
 using Twitter.DAL.Contexts;
+using static System.Net.Mime.MediaTypeNames;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -44,7 +50,7 @@ builder.Services.AddSwaggerGen(opt =>
 });
 builder.Services.AddAuthentication(opt =>
 {
-    opt.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 })
 
     .AddJwtBearer(opt =>
@@ -88,14 +94,22 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
+    });
 }
 
 app.UseHttpsRedirection();
-
+//app.Use(async (context, n) =>
+//{
+//    var a = context.Connection.RemoteIpAddress;
+//    await Console.Out.WriteLineAsync(a.ToString());
+//    await n();
+//});
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseSeedData();
 app.MapControllers();
 
 app.Run();
